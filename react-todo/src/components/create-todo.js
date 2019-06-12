@@ -24,15 +24,20 @@ class CreateTodo extends Component {
     
 
     updateDescription(e){
-        this.setState((prevState,props) => ({description:e.target.value}))
+        console.log(e.target.value);
+        let data = e.target.value;
+        this.setState((prevState,props) => ({description:data}))
+  // this.setState({description:e.target.value})
     }
 
     updateResponsibility(e){
-        this.setState((prevState,props) => ({responsibility:e.target.value}))
+        let data = e.target.value;
+        this.setState((prevState,props) => ({responsibility:data}))
     }
 
     updatePriority(e){
-        this.setState((prevState,props) => ({priority:e.target.value}));
+        let data = e.target.value;
+        this.setState((prevState,props) => ({priority:data}));
     }
 
     onSubmit(e){
@@ -62,7 +67,7 @@ class CreateTodo extends Component {
              <input type="text"
                    className="form-control"
                    value={this.state.description}
-                   onChange={this.updateDescription}/>
+                   onChange={(e) => {this.updateDescription(e)}}/>
              </div>
              <div className="form-group">
              <label>Responsible: </label>
@@ -92,7 +97,7 @@ class CreateTodo extends Component {
                      id="priorityMedium"
                      value="Medium"
                      checked={this.state.priority==="Medium"}
-                     onChange={this.updatePriority}    
+                     onChange={(e) => {this.updatePriority(e)}}    
               />
               <label className="form-check-label">Medium</label>
               </div>
@@ -109,6 +114,9 @@ class CreateTodo extends Component {
               />
               <label className="form-check-label">High</label>
               </div>
+             </div>
+             <div className="form-group">
+             <input type="submit" className="btn btn-primary  " value="Create Todo"/>
              </div>
             </form>    
             </div>
