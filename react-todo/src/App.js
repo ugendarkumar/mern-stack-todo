@@ -17,13 +17,11 @@ class App extends Component {
       <div className="container">
        
        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-       <a className="navbar-brand" href="www.google.com" target="_blank"> 
-        <img src={logo} height="30px" width="30px" alt="logo"/>
+       <a className="navbar-brand" href="https://www.google.com" target="_blank"> 
+        <img src={logo} height="30" width="30" alt="logo"/>
        </a>
-
-
    <Link to="/" className="navbar-brand">MERN stack todo app</Link>
-   <div className="collapse nav-collapse">
+   <div className="collpase nav-collapse">
    <ul className="navbar-nav mr-auto">
    <li className="navbar-item">
    <Link to="/" className="nav-link">Todos</Link>
